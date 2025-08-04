@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Placar Truco - Victinho e Isabelle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        main {
+            height: 100vh;
+        }
+
+        .card {
+            width: 26rem;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <main class="d-flex justify-content-center align-items-center">
+        <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <div class="card background-card">
+                <div class="card-body p-1">
+                    <img src="./img/wallpaper-card-isabelle.png" alt="background-card-isabelle" class="img-fluid" />
+                    <p class="card-title fs-4 fw-bolder mb-1 ms-2">Belle</p>
+                    <p class="card-text fs-6 text-body-secondary mb-0 ms-2">Isabelle Breviglieri</p>
+
+                    <div class="row mt-1">
+                        <div class="col-12">
+                            <div class="bg-light text-center fw-bold mb-2">
+                                <!-- id para atualizar via JS -->
+                                <p id="placar-belle" class="card-title fs-4 fw-bolder mb-1">0</p>
+                                <p class="card-text fs-6 text-body-secondary mb-0">Pontos</p>
+                            </div>
+                        </div>
+
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="belle" data-pontos="1">+1</a></div>
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="belle" data-pontos="3">+3</a></div>
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="belle" data-pontos="6">+6</a></div>
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="belle" data-pontos="9">+9</a></div>
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="belle" data-pontos="12">+12</a></div>
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="belle" data-pontos="ZERAR">ZERAR</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card background-card">
+                <div class="card-body p-1">
+                    <img src="./img/wallpaper-card-victor.png" alt="background-card-isabelle" class="img-fluid" />
+                    <p class="card-title fs-4 fw-bolder mb-1 ms-2">Victinho</p>
+                    <p class="card-text fs-6 text-body-secondary mb-0 ms-2">Victor Chinaglia</p>
+
+                    <div class="row mt-1">
+                        <div class="col-12">
+                            <div class="bg-light text-center fw-bold mb-2">
+                                <!-- id para atualizar via JS -->
+                                <p id="placar-victor" class="card-title fs-4 fw-bolder mb-1">0</p>
+                                <p class="card-text fs-6 text-body-secondary mb-0">Pontos</p>
+                            </div>
+                        </div>
+
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="victor" data-pontos="1">+1</a></div>
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="victor" data-pontos="3">+3</a></div>
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="victor" data-pontos="6">+6</a></div>
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="victor" data-pontos="9">+9</a></div>
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="victor" data-pontos="12">+12</a></div>
+                        <div class="col-4 mb-2 text-center"><a href="#" class="btn btn-light w-100 botao"
+                                data-jogador="victor" data-pontos="ZERAR">ZERAR</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="vencedorModal" tabindex="-1" aria-labelledby="vencedorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="vencedorModalLabel">Fim de jogo!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="mensagemVencedor" class="fs-4 text-center fw-bold"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aqui: removi integrity e crossorigin para evitar bloqueio -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
