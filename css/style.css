@@ -1,11 +1,64 @@
-
-
 .background-card {
-    background-color: rgba(195, 180, 221, 0.08);
+  background-color: rgba(195, 180, 221, 0.08);
 }
 
-.card{
-    border: none;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
+.card {
+  border: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 26rem;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  main {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .card {
+    max-width: 90vw;
+  }
+
+  .card-title.fs-4 {
+    font-size: 1.2rem !important;
+  }
+
+  .card-text.fs-6 {
+    font-size: 0.8rem !important;
+  }
+
+  #placar-belle,
+  #placar-victor {
+    font-size: 1.8rem !important;
+  }
+
+  .btn.botao {
+    font-size: 0.7rem;
+    padding: 0.25rem 0;
+  }
 }
